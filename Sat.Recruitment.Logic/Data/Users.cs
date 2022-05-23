@@ -50,7 +50,7 @@ namespace Sat.Recruitment.Logic.Data
                     Email = pNewUser.Email,
                 };
 
-                if (PublicInstancePropertiesEqual(UserA, UserB))
+                if (CompareUsers(UserA, UserB))
                 {
                     return new Result()
                     {
@@ -67,7 +67,7 @@ namespace Sat.Recruitment.Logic.Data
             };
         }
 
-        public static bool PublicInstancePropertiesEqual<T>(T self, T to) where T : class
+        public static bool CompareUsers<T>(T self, T to) where T : class
         {
             if (self != null && to != null)
             {
